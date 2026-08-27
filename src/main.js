@@ -4,6 +4,7 @@ import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
 import { createInfinityRoom } from "./infinityRoom.js";
+import { createUnicornHerd, createUnicornLights } from "./unicorn.js";
 
 const canvas = document.querySelector("#scene");
 const overlay = document.querySelector("#overlay");
@@ -40,10 +41,30 @@ const camera = new THREE.PerspectiveCamera(
   0.05,
   80,
 );
-camera.position.set(0, 1.62, 0.35);
+camera.position.set(0, 1.15, 1.7);
 
 const infinity = createInfinityRoom("aurora");
 scene.add(infinity.group);
+scene.add(createUnicornLights());
+
+const unicorn = {
+  group: null,
+  origin: new THREE.Vector3(0, 0, -1.05),
+  keepOut: 0.7,
+  update() {},
+};
+
+createUnicornHerd(infinity.room)
+  .then((herd) => {
+    unicorn.group = herd.group;
+    unicorn.origin.copy(herd.origin);
+    unicorn.keepOut = herd.keepOut;
+    unicorn.update = herd.update;
+    scene.add(herd.group);
+  })
+  .catch((error) => {
+    console.error("Could not load the unicorn model.", error);
+  });
 
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
@@ -58,8 +79,8 @@ composer.addPass(
 composer.addPass(new OutputPass());
 
 const look = {
-  yaw: 0.18,
-  pitch: -0.08,
+  yaw: 0,
+  pitch: -0.06,
   dragging: false,
   lastX: 0,
   lastY: 0,
@@ -250,6 +271,17 @@ function updateMovement(delta) {
   velocity.lerp(wish.multiplyScalar(2.35), 1 - Math.exp(-8 * delta));
   camera.position.addScaledVector(velocity, delta);
   clampCamera();
+
+  const dx = camera.position.x - unicorn.origin.x;
+  const dz = camera.position.z - unicorn.origin.z;
+  const distance = Math.hypot(dx, dz);
+  const keepOut = unicorn.keepOut;
+  if (distance < keepOut && distance > 0.0001) {
+    const push = keepOut / distance;
+    camera.position.x = unicorn.origin.x + dx * push;
+    camera.position.z = unicorn.origin.z + dz * push;
+    clampCamera();
+  }
 }
 
 function frame() {
@@ -260,6 +292,7 @@ function frame() {
   camera.quaternion.setFromEuler(orientation);
   updateMovement(delta);
   infinity.update(time);
+  unicorn.update(delta);
   composer.render();
   requestAnimationFrame(frame);
 }

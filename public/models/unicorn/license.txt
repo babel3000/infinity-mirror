@@ -1,0 +1,11 @@
+Model Information:
+* title:	Plush Unicorn
+* source:	https://sketchfab.com/3d-models/plush-unicorn-fd6f044ab8164a7e947f69fbe58435ee
+* author:	C.U.V (https://sketchfab.com/C.U.V)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Plush Unicorn" (https://sketchfab.com/3d-models/plush-unicorn-fd6f044ab8164a7e947f69fbe58435ee) by C.U.V (https://sketchfab.com/C.U.V) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

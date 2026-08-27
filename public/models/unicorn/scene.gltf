@@ -1,0 +1,287 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1964,
+      "max": [
+        21.03200340270996,
+        32.0611572265625,
+        11.518296241760254
+      ],
+      "min": [
+        -21.300718307495117,
+        -0.5632624626159668,
+        -11.518296241760254
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 23568,
+      "componentType": 5126,
+      "count": 1964,
+      "max": [
+        0.9817714691162109,
+        0.9888337254524231,
+        0.9998685121536255
+      ],
+      "min": [
+        -0.999419093132019,
+        -0.9999845027923584,
+        -0.9998685717582703
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1964,
+      "max": [
+        0.9996523857116699,
+        0.9999021887779236,
+        0.9999749064445496,
+        1.0
+      ],
+      "min": [
+        -0.9996523857116699,
+        -0.9996381998062134,
+        -0.9622519612312317,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1964,
+      "max": [
+        0.9955064058303833,
+        0.99609375
+      ],
+      "min": [
+        0.00390625,
+        0.00390625
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 9312,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "C.U.V (https://sketchfab.com/C.U.V)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/plush-unicorn-fd6f044ab8164a7e947f69fbe58435ee",
+      "title": "Plush Unicorn"
+    },
+    "generator": "Sketchfab-12.66.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 37248,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15712,
+      "byteOffset": 37248,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 47136,
+      "byteOffset": 52960,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 31424,
+      "byteOffset": 100096,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 131520,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Plush_Unicorn_baseColor.png"
+    },
+    {
+      "uri": "textures/Plush_Unicorn_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Plush_Unicorn_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "name": "Plush_Unicorn",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Plush Unicorn_Plush Unicorn_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.2204459996194763e-18,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        2.2204459996194763e-18,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "d2157d1f2c9042a39c55a7bb8b19ee5a.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999867,
+        1.6292067073209113e-07,
+        0.0,
+        0.0,
+        -1.6292067073209113e-07,
+        0.9999999999999867,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Plush Unicorn"
+    },
+    {
+      "mesh": 0,
+      "name": "Plush Unicorn_Plush Unicorn_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
