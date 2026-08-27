@@ -1,0 +1,179 @@
+:root {
+  --bg: #050508;
+  --text: #f4f1ea;
+  --muted: rgba(244, 241, 234, 0.62);
+  --line: rgba(244, 241, 234, 0.16);
+  --accent: #c9b6ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Outfit, system-ui, sans-serif;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#overlay,
+#hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+#overlay {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at center, rgba(8, 8, 16, 0.18), rgba(5, 5, 8, 0.78) 62%),
+    linear-gradient(180deg, rgba(5, 5, 8, 0.2), rgba(5, 5, 8, 0.55));
+  transition: opacity 0.6s ease;
+}
+
+#overlay.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#overlay.is-hidden .overlay-inner {
+  pointer-events: none;
+}
+
+.overlay-inner {
+  pointer-events: auto;
+  width: min(42rem, calc(100% - 2.5rem));
+  text-align: center;
+}
+
+.kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 8vw, 5.6rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+
+.lede {
+  margin: 1.25rem auto 0.95rem;
+  max-width: 28rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.tribute {
+  margin: 0 auto 1.8rem;
+  max-width: 26rem;
+  color: rgba(244, 241, 234, 0.48);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+#enter,
+#leave,
+.themes button {
+  pointer-events: auto;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+}
+
+#enter {
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font: 500 0.95rem Outfit, system-ui, sans-serif;
+  letter-spacing: 0.04em;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+#enter:hover {
+  background: rgba(201, 182, 255, 0.16);
+  border-color: rgba(201, 182, 255, 0.4);
+}
+
+.hint {
+  margin-top: 1.1rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+#hud {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.1rem 1.2rem 1.3rem;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+#hud.is-visible {
+  opacity: 1;
+}
+
+.hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hud-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+#leave {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font: 400 0.75rem Outfit, system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.themes {
+  display: flex;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.themes button {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font: 400 0.78rem Outfit, system-ui, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.themes button.active {
+  background: rgba(201, 182, 255, 0.18);
+  border-color: rgba(201, 182, 255, 0.45);
+}

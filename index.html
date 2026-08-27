@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinity Mirror Room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="scene"></canvas>
+
+      <div id="overlay">
+        <div class="overlay-inner">
+          <p class="kicker">Six walls. Infinite rooms.</p>
+          <h1>Infinity Mirror</h1>
+          <p class="lede">
+            A first-person room of mirrored glass. Lights recede in every
+            direction, fading the way real mirrors do.
+          </p>
+          <p class="tribute">
+            In tribute to Yayoi Kusama, whose Infinity Mirror Rooms made it
+            possible to stand inside the infinite.
+          </p>
+          <button id="enter" type="button">Enter the room</button>
+          <p class="hint">WASD to walk · mouse to look · Esc to pause</p>
+        </div>
+      </div>
+
+      <div id="hud" hidden>
+        <div class="hud-top">
+          <span class="hud-title">Infinity Mirror</span>
+          <button id="leave" type="button">Leave</button>
+        </div>
+        <div id="themes" class="themes" role="tablist" aria-label="Light themes">
+          <button type="button" data-theme="aurora" class="active">Aurora</button>
+          <button type="button" data-theme="lantern">Lantern</button>
+          <button type="button" data-theme="ember">Ember</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
