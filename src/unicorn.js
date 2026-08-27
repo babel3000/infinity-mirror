@@ -56,7 +56,9 @@ function fitToRoom(root, room) {
 }
 
 export async function createUnicornHerd(room) {
-  const gltf = await new GLTFLoader().loadAsync("/models/unicorn/scene.gltf");
+  const gltf = await new GLTFLoader().loadAsync(
+    `${import.meta.env.BASE_URL}models/unicorn/scene.gltf`,
+  );
   prepareModel(gltf.scene);
   const keepOut = fitToRoom(gltf.scene, room);
 
